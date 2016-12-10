@@ -89,51 +89,11 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'container white-text center' },
+	        { className: 'container grey-text center' },
 	        _react2.default.createElement(
 	          'h2',
 	          null,
 	          'Build A Recipe Box'
-	        ),
-	        _react2.default.createElement(
-	          'h5',
-	          null,
-	          'written by ',
-	          _react2.default.createElement(
-	            'strong',
-	            null,
-	            'Daniel Deutsch'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'a',
-	          { href: 'https://github.com/DDCreationStudios', target: '_blank' },
-	          'Github / '
-	        ),
-	        _react2.default.createElement(
-	          'a',
-	          { href: 'https://www.freecodecamp.com/ddcreationstudios', target: '_blank' },
-	          'FreeCodeCamp / '
-	        ),
-	        _react2.default.createElement(
-	          'a',
-	          { href: 'http://codepen.io/ddcreationstudios/', target: '_blank' },
-	          'CodePen / '
-	        ),
-	        _react2.default.createElement(
-	          'a',
-	          { href: 'https://www.linkedin.com/in/daniel-deutsch-b95611127', target: '_blank' },
-	          'LinkedIn / '
-	        ),
-	        _react2.default.createElement(
-	          'a',
-	          { href: 'http://ddcreationstudios.at/', target: '_blank' },
-	          'Site'
-	        ),
-	        _react2.default.createElement(
-	          'h6',
-	          null,
-	          'A Free Code Camp Challenge'
 	        )
 	      );
 	    }
@@ -141,7 +101,84 @@
 	  return Header;
 	}(_react2.default.Component);
 
+	var Footer = function (_React$Component2) {
+	  (0, _inherits3.default)(Footer, _React$Component2);
+
+	  function Footer() {
+	    (0, _classCallCheck3.default)(this, Footer);
+	    return (0, _possibleConstructorReturn3.default)(this, (Footer.__proto__ || (0, _getPrototypeOf2.default)(Footer)).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(Footer, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'container grey-text center\'' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'col s6' },
+	            _react2.default.createElement(
+	              'h5',
+	              null,
+	              'A Free Code Camp Challenge'
+	            ),
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'written by ',
+	              _react2.default.createElement(
+	                'strong',
+	                null,
+	                'Daniel Deutsch'
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'footer-copyright' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'container' },
+	            _react2.default.createElement(
+	              'a',
+	              { href: 'https://github.com/DDCreationStudios', target: '_blank' },
+	              'Github / '
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { href: 'https://www.freecodecamp.com/ddcreationstudios', target: '_blank' },
+	              'FreeCodeCamp / '
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { href: 'http://codepen.io/ddcreationstudios/', target: '_blank' },
+	              'CodePen / '
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { href: 'https://www.linkedin.com/in/daniel-deutsch-b95611127', target: '_blank' },
+	              'LinkedIn / '
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { href: 'http://ddcreationstudios.at/', target: '_blank' },
+	              'Site'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	  return Footer;
+	}(_react2.default.Component);
+
 	_reactDom2.default.render(_react2.default.createElement(Header, null), document.getElementById('header'));
+	_reactDom2.default.render(_react2.default.createElement(Footer, null), document.getElementById('footer'));
 
 /***/ },
 /* 1 */
