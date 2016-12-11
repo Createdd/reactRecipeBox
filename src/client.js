@@ -1,6 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+let exampleRecipe = {
+  recipes: [
+    {
+      name: 'Success',
+      ingedients: ['Trust Yourself', 'Break The Rules', 'Don´t Be Afraid To Fail', 'Don´t Listen To The Nay-Sayers','Work Your Butt Off', 'Give Back']
+    },
+    {
+      name: 'More success',
+      ingedients: ['Trust Yourself', 'Break The Rules', 'Don´t Be Afraid To Fail', 'Don´t Listen To The Nay-Sayers','Work Your Butt Off', 'Give Back']
+    }
+  ]
+}
+
 class Header extends React.Component {
   render () {
     return (
@@ -10,7 +23,6 @@ class Header extends React.Component {
     )
   }
 }
-
 class Footer extends React.Component {
   render() {
     return (
@@ -35,9 +47,36 @@ class Footer extends React.Component {
   }
 }
 
+class RecipeList extends React.Component {
+  render () {
+    return (
+      <div className = 'container'>
+        <ul className="collapsible popout" data-collapsible="accordion">
+            {
+              JSON.stringify(exampleRecipe)
+            }
+        </ul>
+      </div>
+    );
+  }
+}
+class Main extends React.Component {
+  render () {
+    return (
+      <div className="container">
+        <RecipeList />
+      </div>
+    );
+  }
+}
+
+
 ReactDOM.render(
   <Header />, document.getElementById('header')
 );
 ReactDOM.render(
     <Footer />, document.getElementById('footer')
+);
+ReactDOM.render(
+    <Main />, document.getElementById('main')
 );
