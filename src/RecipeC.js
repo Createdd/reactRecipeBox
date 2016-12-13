@@ -21,11 +21,11 @@ export default class Recipe extends React.Component {
           </ul>
 
           <div className="row">
-            <div className="col s6 center">
-              <a className="btn waves-effect orange waves-green">EDIT</a>
+            <div className="col s2 offset-s7">
+              <a className="btn waves-effect orange waves-green">Edit</a>
             </div>
-            <div className="col s6 center">
-              <a className="btn waves-effect red waves-green">DELETE</a>
+            <div className="col s2">
+              <a className="btn waves-effect red waves-green">Delete</a>
             </div>
           </div>
 

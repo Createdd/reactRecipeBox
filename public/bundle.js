@@ -21602,20 +21602,20 @@
 	            { className: "row" },
 	            _react2.default.createElement(
 	              "div",
-	              { className: "col s6 center" },
+	              { className: "col s2 offset-s7" },
 	              _react2.default.createElement(
 	                "a",
 	                { className: "btn waves-effect orange waves-green" },
-	                "EDIT"
+	                "Edit"
 	              )
 	            ),
 	            _react2.default.createElement(
 	              "div",
-	              { className: "col s6 center" },
+	              { className: "col s2" },
 	              _react2.default.createElement(
 	                "a",
 	                { className: "btn waves-effect red waves-green" },
-	                "DELETE"
+	                "Delete"
 	              )
 	            )
 	          )
