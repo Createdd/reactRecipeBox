@@ -86,9 +86,9 @@
 
 	var _RecipeC2 = _interopRequireDefault(_RecipeC);
 
-	var _RecipesC = __webpack_require__(248);
+	var _ListC = __webpack_require__(249);
 
-	var _RecipesC2 = _interopRequireDefault(_RecipesC);
+	var _ListC2 = _interopRequireDefault(_ListC);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -116,7 +116,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'container' },
-	        _react2.default.createElement(_RecipesC2.default, null)
+	        _react2.default.createElement(_ListC2.default, null)
 	      );
 	    }
 	  }]);
@@ -21581,7 +21581,11 @@
 	        _react2.default.createElement(
 	          "div",
 	          { className: "collapsible-header" },
-	          _react2.default.createElement("i", { className: "material-icons" }),
+	          _react2.default.createElement(
+	            "i",
+	            { className: "material-icons" },
+	            "library_books"
+	          ),
 	          "Recipe Name"
 	        ),
 	        _react2.default.createElement(
@@ -21628,7 +21632,8 @@
 	exports.default = Recipe;
 
 /***/ },
-/* 248 */
+/* 248 */,
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21667,15 +21672,15 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Recipes = function (_React$Component) {
-	  (0, _inherits3.default)(Recipes, _React$Component);
+	var List = function (_React$Component) {
+	  (0, _inherits3.default)(List, _React$Component);
 
-	  function Recipes() {
-	    (0, _classCallCheck3.default)(this, Recipes);
-	    return (0, _possibleConstructorReturn3.default)(this, (Recipes.__proto__ || (0, _getPrototypeOf2.default)(Recipes)).apply(this, arguments));
+	  function List() {
+	    (0, _classCallCheck3.default)(this, List);
+	    return (0, _possibleConstructorReturn3.default)(this, (List.__proto__ || (0, _getPrototypeOf2.default)(List)).apply(this, arguments));
 	  }
 
-	  (0, _createClass3.default)(Recipes, [{
+	  (0, _createClass3.default)(List, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -21685,16 +21690,15 @@
 	          'ul',
 	          { className: 'collapsible popout', 'data-collapsible': 'expandable' },
 	          _react2.default.createElement(_RecipeC2.default, null),
-	          _react2.default.createElement(_RecipeC2.default, null),
 	          _react2.default.createElement(_RecipeC2.default, null)
 	        )
 	      );
 	    }
 	  }]);
-	  return Recipes;
+	  return List;
 	}(_react2.default.Component);
 
-	exports.default = Recipes;
+	exports.default = List;
 
 /***/ }
 /******/ ]);

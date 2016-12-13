@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from './HeaderC.js';
 import Footer from './FooterC.js';
 import Recipe from './RecipeC.js';
-import Recipes from './RecipesC.js';
+import List from './ListC.js';
 
 let exampleRecipe = {
   recipes: [
@@ -23,7 +23,7 @@ class Main extends React.Component {
   render () {
     return (
       <div className="container">
-        <Recipes />
+        <List />
       </div>
     );
   }

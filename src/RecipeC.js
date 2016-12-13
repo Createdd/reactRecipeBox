@@ -8,7 +8,7 @@ export default class Recipe extends React.Component {
     return (
       <li>
         <div className="collapsible-header">
-          <i className="material-icons"></i>Recipe Name</div>
+          <i className="material-icons">library_books</i>Recipe Name</div>
 
         <div className="collapsible-body">
 
