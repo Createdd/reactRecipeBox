@@ -78,6 +78,10 @@
 
 	var _HeaderC2 = _interopRequireDefault(_HeaderC);
 
+	var _FooterC = __webpack_require__(246);
+
+	var _FooterC2 = _interopRequireDefault(_FooterC);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var exampleRecipe = {
@@ -90,84 +94,8 @@
 	  }]
 	};
 
-	var Footer = function (_React$Component) {
-	  (0, _inherits3.default)(Footer, _React$Component);
-
-	  function Footer() {
-	    (0, _classCallCheck3.default)(this, Footer);
-	    return (0, _possibleConstructorReturn3.default)(this, (Footer.__proto__ || (0, _getPrototypeOf2.default)(Footer)).apply(this, arguments));
-	  }
-
-	  (0, _createClass3.default)(Footer, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'container grey-text center\'' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'col s6' },
-	            _react2.default.createElement(
-	              'h5',
-	              null,
-	              'A Free Code Camp Challenge'
-	            ),
-	            _react2.default.createElement(
-	              'h4',
-	              null,
-	              'written by ',
-	              _react2.default.createElement(
-	                'strong',
-	                null,
-	                'Daniel Deutsch'
-	              )
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'footer-copyright' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'container' },
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'https://github.com/DDCreationStudios', target: '_blank' },
-	              'Github / '
-	            ),
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'https://www.freecodecamp.com/ddcreationstudios', target: '_blank' },
-	              'FreeCodeCamp / '
-	            ),
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'http://codepen.io/ddcreationstudios/', target: '_blank' },
-	              'CodePen / '
-	            ),
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'https://www.linkedin.com/in/daniel-deutsch-b95611127', target: '_blank' },
-	              'LinkedIn / '
-	            ),
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'http://ddcreationstudios.at/', target: '_blank' },
-	              'Site'
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	  return Footer;
-	}(_react2.default.Component);
-
-	var Recipes = function (_React$Component2) {
-	  (0, _inherits3.default)(Recipes, _React$Component2);
+	var Recipes = function (_React$Component) {
+	  (0, _inherits3.default)(Recipes, _React$Component);
 
 	  function Recipes() {
 	    (0, _classCallCheck3.default)(this, Recipes);
@@ -177,7 +105,7 @@
 	  (0, _createClass3.default)(Recipes, [{
 	    key: 'render',
 	    value: function render() {
-	      var _this3 = this;
+	      var _this2 = this;
 
 	      return _react2.default.createElement(
 	        'div',
@@ -189,8 +117,8 @@
 	            return _react2.default.createElement(Recipe, { key: ind,
 	              index: ind,
 	              data: recipe,
-	              'delete': _this3.addRecipe.bind(_this3),
-	              change: _this3.changeRecipe.bind(_this3)
+	              'delete': _this2.addRecipe.bind(_this2),
+	              change: _this2.changeRecipe.bind(_this2)
 	            });
 	          })
 	        )
@@ -200,8 +128,8 @@
 	  return Recipes;
 	}(_react2.default.Component);
 
-	var Recipe = function (_React$Component3) {
-	  (0, _inherits3.default)(Recipe, _React$Component3);
+	var Recipe = function (_React$Component2) {
+	  (0, _inherits3.default)(Recipe, _React$Component2);
 
 	  function Recipe(props) {
 	    (0, _classCallCheck3.default)(this, Recipe);
@@ -211,7 +139,7 @@
 	  (0, _createClass3.default)(Recipe, [{
 	    key: 'render',
 	    value: function render() {
-	      var _this5 = this;
+	      var _this4 = this;
 
 	      return _react2.default.createElement(
 	        'li',
@@ -249,7 +177,7 @@
 	              _react2.default.createElement(
 	                'a',
 	                { className: 'waves-effect waves-light btn', onClick: function onClick() {
-	                    $("#" + _this5.editModalId).openModal();
+	                    $("#" + _this4.editModalId).openModal();
 	                  } },
 	                'EDIT'
 	              ),
@@ -272,8 +200,8 @@
 	  return Recipe;
 	}(_react2.default.Component);
 
-	var Main = function (_React$Component4) {
-	  (0, _inherits3.default)(Main, _React$Component4);
+	var Main = function (_React$Component3) {
+	  (0, _inherits3.default)(Main, _React$Component3);
 
 	  function Main() {
 	    (0, _classCallCheck3.default)(this, Main);
@@ -294,7 +222,7 @@
 	}(_react2.default.Component);
 
 	_reactDom2.default.render(_react2.default.createElement(_HeaderC2.default, null), document.getElementById('header'));
-	_reactDom2.default.render(_react2.default.createElement(Footer, null), document.getElementById('footer'));
+	_reactDom2.default.render(_react2.default.createElement(_FooterC2.default, null), document.getElementById('footer'));
 	_reactDom2.default.render(_react2.default.createElement(Main, null), document.getElementById('main'));
 
 /***/ },
@@ -21583,6 +21511,120 @@
 	}(_react2.default.Component);
 
 	exports.default = Header;
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(1);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(27);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(28);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(32);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(79);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(87);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Footer = function (_React$Component) {
+	  (0, _inherits3.default)(Footer, _React$Component);
+
+	  function Footer() {
+	    (0, _classCallCheck3.default)(this, Footer);
+	    return (0, _possibleConstructorReturn3.default)(this, (Footer.__proto__ || (0, _getPrototypeOf2.default)(Footer)).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(Footer, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { className: "container grey-text center'" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "col s6" },
+	            _react2.default.createElement(
+	              "h5",
+	              null,
+	              "A Free Code Camp Challenge"
+	            ),
+	            _react2.default.createElement(
+	              "h4",
+	              null,
+	              "written by ",
+	              _react2.default.createElement(
+	                "strong",
+	                null,
+	                "Daniel Deutsch"
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "footer-copyright" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "container" },
+	            _react2.default.createElement(
+	              "a",
+	              { href: "https://github.com/DDCreationStudios", target: "_blank" },
+	              "Github / "
+	            ),
+	            _react2.default.createElement(
+	              "a",
+	              { href: "https://www.freecodecamp.com/ddcreationstudios", target: "_blank" },
+	              "FreeCodeCamp / "
+	            ),
+	            _react2.default.createElement(
+	              "a",
+	              { href: "http://codepen.io/ddcreationstudios/", target: "_blank" },
+	              "CodePen / "
+	            ),
+	            _react2.default.createElement(
+	              "a",
+	              { href: "https://www.linkedin.com/in/daniel-deutsch-b95611127", target: "_blank" },
+	              "LinkedIn / "
+	            ),
+	            _react2.default.createElement(
+	              "a",
+	              { href: "http://ddcreationstudios.at/", target: "_blank" },
+	              "Site"
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	  return Footer;
+	}(_react2.default.Component);
+
+	exports.default = Footer;
 
 /***/ }
 /******/ ]);
