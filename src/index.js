@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './HeaderC.js';
 import Footer from './FooterC.js';
-import Recipe from './FooterC.js';
+import Recipe from './Recipe.js';
+import Recipes from './Recipes.js';
 
 let exampleRecipe = {
   recipes: [
