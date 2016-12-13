@@ -21575,8 +21575,6 @@
 	  (0, _createClass3.default)(Recipe, [{
 	    key: "render",
 	    value: function render() {
-	      var _this2 = this;
-
 	      return _react2.default.createElement(
 	        "li",
 	        null,
@@ -21588,7 +21586,7 @@
 	            { className: "material-icons" },
 	            "view_list"
 	          ),
-	          this.props.data.name
+	          "A NAME"
 	        ),
 	        _react2.default.createElement(
 	          "div",
@@ -21596,13 +21594,11 @@
 	          _react2.default.createElement(
 	            "ul",
 	            { className: "collection" },
-	            this.props.data.ingredients.map(function (ingredient, idx) {
-	              return _react2.default.createElement(
-	                "li",
-	                { className: "collection-item", key: idx },
-	                ingredient
-	              );
-	            })
+	            _react2.default.createElement(
+	              "li",
+	              { className: "collection-item" },
+	              "Ingrediants"
+	            )
 	          ),
 	          _react2.default.createElement(
 	            "div",
@@ -21612,19 +21608,16 @@
 	              { className: "col s6 center" },
 	              _react2.default.createElement(
 	                "a",
-	                { className: "waves-effect waves-light btn", onClick: function onClick() {
-	                    $("#" + _this2.editModalId).openModal();
-	                  } },
+	                { className: "waves-effect waves-light btn" },
 	                "EDIT"
-	              ),
-	              _react2.default.createElement(EditModal, { id: this.editModalId, recipe: this.props.data, editIngredients: this.editIngredients.bind(this) })
+	              )
 	            ),
 	            _react2.default.createElement(
 	              "div",
 	              { className: "col s6 center" },
 	              _react2.default.createElement(
 	                "a",
-	                { className: "waves-effect red waves-light btn", onClick: this.handleDelete.bind(this) },
+	                { className: "waves-effect red waves-light btn" },
 	                "DELETE"
 	              )
 	            )
@@ -21672,6 +21665,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _RecipeC = __webpack_require__(247);
+
+	var _RecipeC2 = _interopRequireDefault(_RecipeC);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Recipes = function (_React$Component) {
@@ -21685,22 +21682,13 @@
 	  (0, _createClass3.default)(Recipes, [{
 	    key: 'render',
 	    value: function render() {
-	      var _this2 = this;
-
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'container' },
 	        _react2.default.createElement(
 	          'ul',
 	          { className: 'collapsible popout', 'data-collapsible': 'accordion' },
-	          this.state.recipes.map(function (recipe, ind) {
-	            return _react2.default.createElement(Recipe, { key: ind,
-	              index: ind,
-	              data: recipe,
-	              'delete': _this2.addRecipe.bind(_this2),
-	              change: _this2.changeRecipe.bind(_this2)
-	            });
-	          })
+	          _react2.default.createElement(_RecipeC2.default, { key: true })
 	        )
 	      );
 	    }
