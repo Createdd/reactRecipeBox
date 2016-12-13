@@ -6,8 +6,8 @@ export default class Recipe extends React.Component {
   }
   render () {
     return (
-      <li>
-        <div className="collapsible-header">
+      <li className="brown lighten-3">
+        <div className="collapsible-header brown">
           <i className="material-icons">library_books</i>
           {this.props.data.name}
         </div>
@@ -16,7 +16,11 @@ export default class Recipe extends React.Component {
 
           <ul className="collection">
               {this.props.data.ingredients.map((ingredient,ind) => {
-                return (<li className="collection-item" key={ind}><i className="material-icons">done</i>{ingredient}</li>)
+                return (
+                  <li className="collection-item brown lighten-3" key={ind}>
+                    <i className="material-icons">done</i>{ingredient}
+                  </li>
+                )
               })}
           </ul>
 

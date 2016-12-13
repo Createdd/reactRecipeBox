@@ -21567,10 +21567,10 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        "li",
-	        null,
+	        { className: "brown lighten-3" },
 	        _react2.default.createElement(
 	          "div",
-	          { className: "collapsible-header" },
+	          { className: "collapsible-header brown" },
 	          _react2.default.createElement(
 	            "i",
 	            { className: "material-icons" },
@@ -21587,7 +21587,7 @@
 	            this.props.data.ingredients.map(function (ingredient, ind) {
 	              return _react2.default.createElement(
 	                "li",
-	                { className: "collection-item", key: ind },
+	                { className: "collection-item brown lighten-3", key: ind },
 	                _react2.default.createElement(
 	                  "i",
 	                  { className: "material-icons" },
