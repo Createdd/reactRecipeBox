@@ -1,0 +1,9 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: Squada One;
+}
+main {
+    flex: 1 0 auto;
+}

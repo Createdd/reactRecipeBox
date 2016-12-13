@@ -21696,11 +21696,32 @@
 	  }
 
 	  (0, _createClass3.default)(List, [{
+	    key: 'addRecipe',
+	    value: function addRecipe(recipe) {}
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'container' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'fixed-action-btn', style: {
+	              bottom: "45px",
+	              right: "24px"
+	            } },
+	          _react2.default.createElement(
+	            'a',
+	            { className: 'btn waves-effect waves-light btn-floating btn-large red lighten-2', onClick: function onClick() {
+	                $("#addmodal").openModal();
+	              } },
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'large material-icons' },
+	              'add'
+	            )
+	          )
+	        ),
 	        _react2.default.createElement(
 	          'ul',
 	          { className: 'collapsible popout', 'data-collapsible': 'expandable' },
