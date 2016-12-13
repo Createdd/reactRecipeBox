@@ -8,21 +8,23 @@ export default class Recipe extends React.Component {
     return (
       <li>
         <div className="collapsible-header">
-          <i className="material-icons">view_list</i>A NAME</div>
+          <i className="material-icons"></i>Recipe Name</div>
+
         <div className="collapsible-body">
+
           <ul className="collection">
-
-            <li className="collection-item">Ingrediants</li>
-
+            <li className="collection-item">Ingredients</li>
           </ul>
+
           <div className="row">
             <div className="col s6 center">
-              <a className="waves-effect waves-light btn">EDIT</a>
+              <a className="btn waves-effect orange waves-green">EDIT</a>
             </div>
             <div className="col s6 center">
-              <a className="waves-effect red waves-light btn">DELETE</a>
+              <a className="btn waves-effect red waves-green">DELETE</a>
             </div>
           </div>
+
         </div>
       </li>
     );

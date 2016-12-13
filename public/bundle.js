@@ -21581,12 +21581,8 @@
 	        _react2.default.createElement(
 	          "div",
 	          { className: "collapsible-header" },
-	          _react2.default.createElement(
-	            "i",
-	            { className: "material-icons" },
-	            "view_list"
-	          ),
-	          "A NAME"
+	          _react2.default.createElement("i", { className: "material-icons" }),
+	          "Recipe Name"
 	        ),
 	        _react2.default.createElement(
 	          "div",
@@ -21597,7 +21593,7 @@
 	            _react2.default.createElement(
 	              "li",
 	              { className: "collection-item" },
-	              "Ingrediants"
+	              "Ingredients"
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -21608,7 +21604,7 @@
 	              { className: "col s6 center" },
 	              _react2.default.createElement(
 	                "a",
-	                { className: "waves-effect waves-light btn" },
+	                { className: "btn waves-effect orange waves-green" },
 	                "EDIT"
 	              )
 	            ),
@@ -21617,7 +21613,7 @@
 	              { className: "col s6 center" },
 	              _react2.default.createElement(
 	                "a",
-	                { className: "waves-effect red waves-light btn" },
+	                { className: "btn waves-effect red waves-green" },
 	                "DELETE"
 	              )
 	            )
@@ -21687,8 +21683,10 @@
 	        { className: 'container' },
 	        _react2.default.createElement(
 	          'ul',
-	          { className: 'collapsible popout', 'data-collapsible': 'accordion' },
-	          _react2.default.createElement(_RecipeC2.default, { key: true })
+	          { className: 'collapsible popout', 'data-collapsible': 'expandable' },
+	          _react2.default.createElement(_RecipeC2.default, null),
+	          _react2.default.createElement(_RecipeC2.default, null),
+	          _react2.default.createElement(_RecipeC2.default, null)
 	        )
 	      );
 	    }
