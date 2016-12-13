@@ -21584,11 +21584,18 @@
 	          _react2.default.createElement(
 	            "ul",
 	            { className: "collection" },
-	            _react2.default.createElement(
-	              "li",
-	              { className: "collection-item" },
-	              "Ingredients"
-	            )
+	            this.props.data.ingredients.map(function (ingredient, ind) {
+	              return _react2.default.createElement(
+	                "li",
+	                { className: "collection-item", key: ind },
+	                _react2.default.createElement(
+	                  "i",
+	                  { className: "material-icons" },
+	                  "done"
+	                ),
+	                ingredient
+	              );
+	            })
 	          ),
 	          _react2.default.createElement(
 	            "div",
@@ -21666,8 +21673,11 @@
 	    name: 'Success',
 	    ingredients: ['Trust Yourself', 'Break The Rules', 'Don´t Be Afraid To Fail', 'Don´t Listen To The Nay-Sayers', 'Work Your Butt Off', 'Give Back']
 	  }, {
-	    name: 'More success',
-	    ingredients: ['Trust Yourself', 'Break The Rules', 'Don´t Be Afraid To Fail', 'Don´t Listen To The Nay-Sayers', 'Work Your Butt Off', 'Give Back']
+	    name: 'Goodlife',
+	    ingredients: ['Health', 'Wealth', 'Love', 'Happiness']
+	  }, {
+	    name: 'Happiness',
+	    ingredients: ['Moms Spaghetti', 'Whole crowd', 'goes so loud', '8mile']
 	  }]
 	};
 
@@ -21695,12 +21705,8 @@
 	          'ul',
 	          { className: 'collapsible popout', 'data-collapsible': 'expandable' },
 	          this.state.example.recipes.map(function (recipe, ind) {
-	            console.log(recipe);
 	            return _react2.default.createElement(_RecipeC2.default, { key: ind, data: recipe });
-	          }),
-	          _react2.default.createElement(_RecipeC2.default, { data: {
-	              name: 'hallo'
-	            } })
+	          })
 	        )
 	      );
 	    }

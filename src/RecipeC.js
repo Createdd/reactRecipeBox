@@ -8,12 +8,16 @@ export default class Recipe extends React.Component {
     return (
       <li>
         <div className="collapsible-header">
-          <i className="material-icons">library_books</i>{this.props.data.name}</div>
+          <i className="material-icons">library_books</i>
+          {this.props.data.name}
+        </div>
 
         <div className="collapsible-body">
 
           <ul className="collection">
-            <li className="collection-item">Ingredients</li>
+              {this.props.data.ingredients.map((ingredient,ind) => {
+                return (<li className="collection-item" key={ind}><i className="material-icons">done</i>{ingredient}</li>)
+              })}
           </ul>
 
           <div className="row">
