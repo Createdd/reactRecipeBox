@@ -21666,6 +21666,10 @@
 
 	var _RecipeC2 = _interopRequireDefault(_RecipeC);
 
+	var _NewModalC = __webpack_require__(251);
+
+	var _NewModalC2 = _interopRequireDefault(_NewModalC);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var exampleRecipe = {
@@ -21697,7 +21701,11 @@
 
 	  (0, _createClass3.default)(List, [{
 	    key: 'addRecipe',
-	    value: function addRecipe(recipe) {}
+	    value: function addRecipe(recipe) {
+	      this.setState({
+	        recipes: this.state.example.recipes.concat([recipe])
+	      });
+	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
@@ -21705,30 +21713,29 @@
 	        'div',
 	        { className: 'container' },
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'fixed-action-btn', style: {
-	              bottom: "45px",
-	              right: "24px"
-	            } },
-	          _react2.default.createElement(
-	            'a',
-	            { className: 'btn waves-effect waves-light btn-floating btn-large red lighten-2', onClick: function onClick() {
-	                $("#addmodal").openModal();
-	              } },
-	            _react2.default.createElement(
-	              'i',
-	              { className: 'large material-icons' },
-	              'add'
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
 	          'ul',
 	          { className: 'collapsible popout', 'data-collapsible': 'expandable' },
 	          this.state.example.recipes.map(function (recipe, ind) {
 	            return _react2.default.createElement(_RecipeC2.default, { key: ind, data: recipe });
 	          })
-	        )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'fixed-action-btn' },
+	          _react2.default.createElement(
+	            'a',
+	            { className: 'btn btn-floating btn-large waves-effect red waves-green',
+	              onClick: function onClick() {
+	                $('#newmodal').openModal();
+	              } },
+	            _react2.default.createElement(
+	              'i',
+	              { className: 'large material-icons' },
+	              'playlist_add'
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(_NewModalC2.default, { id: 'newmodal', add: this.addRecipe.bind(this) })
 	      );
 	    }
 	  }]);
@@ -21736,6 +21743,119 @@
 	}(_react2.default.Component);
 
 	exports.default = List;
+
+/***/ },
+/* 249 */,
+/* 250 */,
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(1);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(27);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(28);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(32);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(79);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(87);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _RecipeC = __webpack_require__(247);
+
+	var _RecipeC2 = _interopRequireDefault(_RecipeC);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var NewModal = function (_React$Component) {
+	  (0, _inherits3.default)(NewModal, _React$Component);
+
+	  function NewModal() {
+	    (0, _classCallCheck3.default)(this, NewModal);
+	    return (0, _possibleConstructorReturn3.default)(this, (NewModal.__proto__ || (0, _getPrototypeOf2.default)(NewModal)).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(NewModal, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: this.props.id, className: 'modal' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'modal-content' },
+	          _react2.default.createElement(
+	            'h4',
+	            { className: 'center' },
+	            'New recipe'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'row' },
+	            _react2.default.createElement(
+	              'form',
+	              { className: 'col s12' },
+	              _react2.default.createElement('input', { id: 'recipeName', type: 'text' }),
+	              _react2.default.createElement(
+	                'label',
+	                { htmlFor: 'recipeName' },
+	                'Name of the recipe'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'form',
+	              { className: 'col s12' },
+	              _react2.default.createElement('textarea', { id: 'recipeIngredients',
+	                className: 'materialize-textarea',
+	                defaultValue: '' }),
+	              _react2.default.createElement(
+	                'label',
+	                { htmlFor: 'recipeIngredients' },
+	                'Ingredients (Seperate with commas)'
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'modal-footer' },
+	          _react2.default.createElement(
+	            'a',
+	            { href: '#!', className: 'modal-action modal-close waves-effect waves-green btn-flat' },
+	            'Cancel'
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: '#!', className: 'modal-action modal-close waves-effect waves-green btn-flat' },
+	            'Save'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	  return NewModal;
+	}(_react2.default.Component);
+
+	exports.default = NewModal;
 
 /***/ }
 /******/ ]);

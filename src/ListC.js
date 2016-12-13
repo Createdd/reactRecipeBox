@@ -1,5 +1,6 @@
 import React from 'react';
 import Recipe from './RecipeC.js';
+import NewModal from './NewModalC.js';
 
 let exampleRecipe = {
   recipes: [
@@ -27,28 +28,29 @@ export default class List extends React.Component {
   }
 
   addRecipe(recipe) {
-
+    this.setState({
+      recipes:this.state.example.recipes.concat([recipe])
+    })
   }
 
   render () {
     return (
       <div className = 'container'>
-        <div className="fixed-action-btn" style={{
-                    bottom: "45px",
-                    right: "24px"
-                }}>
-                    <a className="btn waves-effect waves-light btn-floating btn-large red lighten-2" onClick={() => {
-                        $("#addmodal").openModal();
-                    }}>
-                        <i className="large material-icons">add</i>
-                    </a>
-                </div>
         <ul className="collapsible popout" data-collapsible="expandable">
           {this.state.example.recipes.map((recipe,ind) => {
             return (<Recipe key={ind} data={recipe} />)
             })
           }
         </ul>
+        <div className="fixed-action-btn">
+          <a className="btn btn-floating btn-large waves-effect red waves-green"
+            onClick={()=> {$('#newmodal').openModal()}}>
+            <i className="large material-icons">
+              playlist_add
+            </i>
+          </a>
+        </div>
+        <NewModal id="newmodal" add={this.addRecipe.bind(this)}/>
       </div>
     );
   }
