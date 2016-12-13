@@ -86,21 +86,11 @@
 
 	var _RecipeC2 = _interopRequireDefault(_RecipeC);
 
-	var _ListC = __webpack_require__(249);
+	var _ListC = __webpack_require__(248);
 
 	var _ListC2 = _interopRequireDefault(_ListC);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var exampleRecipe = {
-	  recipes: [{
-	    name: 'Success',
-	    ingedients: ['Trust Yourself', 'Break The Rules', 'Don´t Be Afraid To Fail', 'Don´t Listen To The Nay-Sayers', 'Work Your Butt Off', 'Give Back']
-	  }, {
-	    name: 'More success',
-	    ingedients: ['Trust Yourself', 'Break The Rules', 'Don´t Be Afraid To Fail', 'Don´t Listen To The Nay-Sayers', 'Work Your Butt Off', 'Give Back']
-	  }]
-	};
 
 	var Main = function (_React$Component) {
 	  (0, _inherits3.default)(Main, _React$Component);
@@ -21586,7 +21576,7 @@
 	            { className: "material-icons" },
 	            "library_books"
 	          ),
-	          "Recipe Name"
+	          this.props.data.name
 	        ),
 	        _react2.default.createElement(
 	          "div",
@@ -21632,8 +21622,7 @@
 	exports.default = Recipe;
 
 /***/ },
-/* 248 */,
-/* 249 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21672,12 +21661,28 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var exampleRecipe = {
+	  recipes: [{
+	    name: 'Success',
+	    ingredients: ['Trust Yourself', 'Break The Rules', 'Don´t Be Afraid To Fail', 'Don´t Listen To The Nay-Sayers', 'Work Your Butt Off', 'Give Back']
+	  }, {
+	    name: 'More success',
+	    ingredients: ['Trust Yourself', 'Break The Rules', 'Don´t Be Afraid To Fail', 'Don´t Listen To The Nay-Sayers', 'Work Your Butt Off', 'Give Back']
+	  }]
+	};
+
 	var List = function (_React$Component) {
 	  (0, _inherits3.default)(List, _React$Component);
 
-	  function List() {
+	  function List(props) {
 	    (0, _classCallCheck3.default)(this, List);
-	    return (0, _possibleConstructorReturn3.default)(this, (List.__proto__ || (0, _getPrototypeOf2.default)(List)).apply(this, arguments));
+
+	    var _this = (0, _possibleConstructorReturn3.default)(this, (List.__proto__ || (0, _getPrototypeOf2.default)(List)).call(this, props));
+
+	    _this.state = {
+	      example: exampleRecipe
+	    };
+	    return _this;
 	  }
 
 	  (0, _createClass3.default)(List, [{
@@ -21689,8 +21694,13 @@
 	        _react2.default.createElement(
 	          'ul',
 	          { className: 'collapsible popout', 'data-collapsible': 'expandable' },
-	          _react2.default.createElement(_RecipeC2.default, null),
-	          _react2.default.createElement(_RecipeC2.default, null)
+	          this.state.example.recipes.map(function (recipe, ind) {
+	            console.log(recipe);
+	            return _react2.default.createElement(_RecipeC2.default, { key: ind, data: recipe });
+	          }),
+	          _react2.default.createElement(_RecipeC2.default, { data: {
+	              name: 'hallo'
+	            } })
 	        )
 	      );
 	    }
