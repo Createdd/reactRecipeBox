@@ -82,6 +82,14 @@
 
 	var _FooterC2 = _interopRequireDefault(_FooterC);
 
+	var _RecipeC = __webpack_require__(247);
+
+	var _RecipeC2 = _interopRequireDefault(_RecipeC);
+
+	var _RecipesC = __webpack_require__(248);
+
+	var _RecipesC2 = _interopRequireDefault(_RecipesC);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var exampleRecipe = {
@@ -108,7 +116,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'container' },
-	        _react2.default.createElement(Recipes, null)
+	        _react2.default.createElement(_RecipesC2.default, null)
 	      );
 	    }
 	  }]);
@@ -21519,6 +21527,188 @@
 	}(_react2.default.Component);
 
 	exports.default = Footer;
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(1);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(27);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(28);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(32);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(79);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(87);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Recipe = function (_React$Component) {
+	  (0, _inherits3.default)(Recipe, _React$Component);
+
+	  function Recipe(props) {
+	    (0, _classCallCheck3.default)(this, Recipe);
+	    return (0, _possibleConstructorReturn3.default)(this, (Recipe.__proto__ || (0, _getPrototypeOf2.default)(Recipe)).call(this, props));
+	  }
+
+	  (0, _createClass3.default)(Recipe, [{
+	    key: "render",
+	    value: function render() {
+	      var _this2 = this;
+
+	      return _react2.default.createElement(
+	        "li",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { className: "collapsible-header" },
+	          _react2.default.createElement(
+	            "i",
+	            { className: "material-icons" },
+	            "view_list"
+	          ),
+	          this.props.data.name
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "collapsible-body" },
+	          _react2.default.createElement(
+	            "ul",
+	            { className: "collection" },
+	            this.props.data.ingredients.map(function (ingredient, idx) {
+	              return _react2.default.createElement(
+	                "li",
+	                { className: "collection-item", key: idx },
+	                ingredient
+	              );
+	            })
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col s6 center" },
+	              _react2.default.createElement(
+	                "a",
+	                { className: "waves-effect waves-light btn", onClick: function onClick() {
+	                    $("#" + _this2.editModalId).openModal();
+	                  } },
+	                "EDIT"
+	              ),
+	              _react2.default.createElement(EditModal, { id: this.editModalId, recipe: this.props.data, editIngredients: this.editIngredients.bind(this) })
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col s6 center" },
+	              _react2.default.createElement(
+	                "a",
+	                { className: "waves-effect red waves-light btn", onClick: this.handleDelete.bind(this) },
+	                "DELETE"
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	  return Recipe;
+	}(_react2.default.Component);
+
+	exports.default = Recipe;
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(1);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(27);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(28);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(32);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(79);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(87);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Recipes = function (_React$Component) {
+	  (0, _inherits3.default)(Recipes, _React$Component);
+
+	  function Recipes() {
+	    (0, _classCallCheck3.default)(this, Recipes);
+	    return (0, _possibleConstructorReturn3.default)(this, (Recipes.__proto__ || (0, _getPrototypeOf2.default)(Recipes)).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(Recipes, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement(
+	          'ul',
+	          { className: 'collapsible popout', 'data-collapsible': 'accordion' },
+	          this.state.recipes.map(function (recipe, ind) {
+	            return _react2.default.createElement(Recipe, { key: ind,
+	              index: ind,
+	              data: recipe,
+	              'delete': _this2.addRecipe.bind(_this2),
+	              change: _this2.changeRecipe.bind(_this2)
+	            });
+	          })
+	        )
+	      );
+	    }
+	  }]);
+	  return Recipes;
+	}(_react2.default.Component);
+
+	exports.default = Recipes;
 
 /***/ }
 /******/ ]);
