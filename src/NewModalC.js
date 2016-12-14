@@ -9,17 +9,17 @@ export default class NewModal extends React.Component {
     return (
       <div id="newmodal" className="modal">
         <div className="modal-content">
-            <h4 className="center">New recipe</h4>
+            <h4 className="center">Add A New Recipe</h4>
           <div className="row">
-            <form className="col s12">
-              <input id="recipeName" type="text"/>
+            <form className="input-field col s12">
+              <i className="material-icons prefix">mode_edit</i>
+              <input id="recipeName" type="text" className="validate"/>
               <label htmlFor="recipeName">Name of the recipe</label>
             </form>
-            <form className="col s12">
+            <form className="input-field col s12">
+              <i className="material-icons prefix">mode_edit</i>
               <textarea id="recipeIngredients"
-                className="materialize-textarea"
-                defaultValue="">
-              </textarea>
+                className="materialize-textarea validate"></textarea>
               <label htmlFor="recipeIngredients">Ingredients (Seperate with commas)</label>
             </form>
           </div>

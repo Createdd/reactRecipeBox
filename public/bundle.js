@@ -21804,15 +21804,20 @@
 	          _react2.default.createElement(
 	            'h4',
 	            { className: 'center' },
-	            'New recipe'
+	            'Add A New Recipe'
 	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'row' },
 	            _react2.default.createElement(
 	              'form',
-	              { className: 'col s12' },
-	              _react2.default.createElement('input', { id: 'recipeName', type: 'text' }),
+	              { className: 'input-field col s12' },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'mode_edit'
+	              ),
+	              _react2.default.createElement('input', { id: 'recipeName', type: 'text', className: 'validate' }),
 	              _react2.default.createElement(
 	                'label',
 	                { htmlFor: 'recipeName' },
@@ -21821,10 +21826,14 @@
 	            ),
 	            _react2.default.createElement(
 	              'form',
-	              { className: 'col s12' },
+	              { className: 'input-field col s12' },
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons prefix' },
+	                'mode_edit'
+	              ),
 	              _react2.default.createElement('textarea', { id: 'recipeIngredients',
-	                className: 'materialize-textarea',
-	                defaultValue: '' }),
+	                className: 'materialize-textarea validate' }),
 	              _react2.default.createElement(
 	                'label',
 	                { htmlFor: 'recipeIngredients' },
