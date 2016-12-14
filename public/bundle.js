@@ -21705,6 +21705,7 @@
 	      this.setState({
 	        recipes: this.state.example.recipes.concat([recipe])
 	      });
+	      console.log(this.state.recipes);
 	    }
 	  }, {
 	    key: 'render',
@@ -21735,7 +21736,7 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(_NewModalC2.default, { id: 'newmodal' })
+	        _react2.default.createElement(_NewModalC2.default, { id: 'newmodal', add: this.addRecipe.bind(this) })
 	      );
 	    }
 	  }]);
@@ -21787,12 +21788,36 @@
 	var NewModal = function (_React$Component) {
 	  (0, _inherits3.default)(NewModal, _React$Component);
 
-	  function NewModal(props) {
+	  function NewModal() {
 	    (0, _classCallCheck3.default)(this, NewModal);
-	    return (0, _possibleConstructorReturn3.default)(this, (NewModal.__proto__ || (0, _getPrototypeOf2.default)(NewModal)).call(this, props));
+	    return (0, _possibleConstructorReturn3.default)(this, (NewModal.__proto__ || (0, _getPrototypeOf2.default)(NewModal)).apply(this, arguments));
 	  }
 
 	  (0, _createClass3.default)(NewModal, [{
+	    key: 'handleName',
+	    value: function handleName(e) {
+	      this.newName = e.target.value.trim();
+	    }
+	  }, {
+	    key: 'handleIngredients',
+	    value: function handleIngredients(e) {
+	      this.newIngredients = e.target.value.split(",").map(function (str) {
+	        return str.trim();
+	      });
+	    }
+	  }, {
+	    key: 'handleSave',
+	    value: function handleSave() {
+	      if (this.handleName === undefined || this.handleIngredients === undefined) {
+	        return;
+	      }
+	      var newRecipe = {
+	        name: this.newName,
+	        ingredients: this.newIngredients
+	      };
+	      this.props.add(newRecipe);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -21817,7 +21842,8 @@
 	                { className: 'material-icons prefix' },
 	                'mode_edit'
 	              ),
-	              _react2.default.createElement('input', { id: 'recipeName', type: 'text', className: 'validate' }),
+	              _react2.default.createElement('input', { id: 'recipeName', type: 'text', className: 'validate',
+	                onChange: this.handleName.bind(this) }),
 	              _react2.default.createElement(
 	                'label',
 	                { htmlFor: 'recipeName' },
@@ -21833,7 +21859,8 @@
 	                'mode_edit'
 	              ),
 	              _react2.default.createElement('textarea', { id: 'recipeIngredients',
-	                className: 'materialize-textarea validate' }),
+	                className: 'materialize-textarea validate',
+	                onChange: this.handleIngredients.bind(this) }),
 	              _react2.default.createElement(
 	                'label',
 	                { htmlFor: 'recipeIngredients' },
@@ -21852,7 +21879,8 @@
 	          ),
 	          _react2.default.createElement(
 	            'a',
-	            { href: '#!', className: 'modal-action modal-close waves-effect waves-green btn-flat' },
+	            { href: '#!', className: 'modal-action modal-close waves-effect waves-green btn-flat',
+	              onClick: this.handleSave.bind(this) },
 	            'Save'
 	          )
 	        )

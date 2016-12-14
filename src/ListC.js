@@ -32,6 +32,7 @@ export default class List extends React.Component {
     this.setState({
       recipes:this.state.example.recipes.concat([recipe])
     })
+    console.log(this.state.recipes)
   }
 
   render () {
@@ -51,7 +52,7 @@ export default class List extends React.Component {
             </i>
           </a>
         </div>
-        <NewModal id="newmodal" />
+        <NewModal id="newmodal" add={this.addRecipe.bind(this)}/>
       </div>
     );
   }

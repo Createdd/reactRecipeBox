@@ -2,8 +2,22 @@ import React from 'react';
 import Recipe from './RecipeC.js';
 
 export default class NewModal extends React.Component {
-  constructor(props) {
-    super(props);
+  handleName(e){
+    this.newName = e.target.value.trim();
+  }
+  handleIngredients(e){
+    this.newIngredients = e.target.value.split(",").map(str => str.trim());
+  }
+  handleSave() {
+    if(this.handleName === undefined || this.handleIngredients === undefined) {
+      return;
+    }
+    let newRecipe = {
+      name: this.newName,
+      ingredients: this.newIngredients
+    }
+    this.props.add(newRecipe);
+
   }
   render() {
     return (
@@ -13,13 +27,15 @@ export default class NewModal extends React.Component {
           <div className="row">
             <form className="input-field col s12">
               <i className="material-icons prefix">mode_edit</i>
-              <input id="recipeName" type="text" className="validate"/>
+              <input id="recipeName" type="text" className="validate"
+                  onChange={this.handleName.bind(this)}/>
               <label htmlFor="recipeName">Name of the recipe</label>
             </form>
             <form className="input-field col s12">
               <i className="material-icons prefix">mode_edit</i>
               <textarea id="recipeIngredients"
-                className="materialize-textarea validate"></textarea>
+                className="materialize-textarea validate"
+                onChange={this.handleIngredients.bind(this)}></textarea>
               <label htmlFor="recipeIngredients">Ingredients (Seperate with commas)</label>
             </form>
           </div>
@@ -27,7 +43,8 @@ export default class NewModal extends React.Component {
         <div className="modal-footer">
           <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">
             Cancel</a>
-          <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">
+          <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat"
+            onClick={this.handleSave.bind(this)}>
             Save</a>
         </div>
       </div>
