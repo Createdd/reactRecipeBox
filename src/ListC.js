@@ -43,14 +43,14 @@ export default class List extends React.Component {
           }
         </ul>
         <div className="fixed-action-btn">
-          <a className="btn btn-floating btn-large waves-effect red waves-green"
-            onClick={()=> {$('#newmodal').openModal()}}>
+          <a className="btn btn-floating btn-large waves-effect waves- red waves-green"
+            onClick={()=> {$("#newmodal").openModal()}}>
             <i className="large material-icons">
               playlist_add
             </i>
           </a>
         </div>
-        <NewModal id="newmodal" add={this.addRecipe.bind(this)}/>
+        <NewModal />
       </div>
     );
   }

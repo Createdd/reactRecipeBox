@@ -2,9 +2,12 @@ import React from 'react';
 import Recipe from './RecipeC.js';
 
 export default class NewModal extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <div id={this.props.id} className="modal">
+      <div id="newmodal" className="modal">
         <div className="modal-content">
             <h4 className="center">New recipe</h4>
           <div className="row">

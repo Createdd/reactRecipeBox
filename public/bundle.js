@@ -21666,7 +21666,7 @@
 
 	var _RecipeC2 = _interopRequireDefault(_RecipeC);
 
-	var _NewModalC = __webpack_require__(251);
+	var _NewModalC = __webpack_require__(249);
 
 	var _NewModalC2 = _interopRequireDefault(_NewModalC);
 
@@ -21724,9 +21724,9 @@
 	          { className: 'fixed-action-btn' },
 	          _react2.default.createElement(
 	            'a',
-	            { className: 'btn btn-floating btn-large waves-effect red waves-green',
+	            { className: 'btn btn-floating btn-large waves-effect waves- red waves-green',
 	              onClick: function onClick() {
-	                $('#newmodal').openModal();
+	                $("#newmodal").openModal();
 	              } },
 	            _react2.default.createElement(
 	              'i',
@@ -21735,7 +21735,7 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(_NewModalC2.default, { id: 'newmodal', add: this.addRecipe.bind(this) })
+	        _react2.default.createElement(_NewModalC2.default, null)
 	      );
 	    }
 	  }]);
@@ -21745,9 +21745,7 @@
 	exports.default = List;
 
 /***/ },
-/* 249 */,
-/* 250 */,
-/* 251 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21789,9 +21787,9 @@
 	var NewModal = function (_React$Component) {
 	  (0, _inherits3.default)(NewModal, _React$Component);
 
-	  function NewModal() {
+	  function NewModal(props) {
 	    (0, _classCallCheck3.default)(this, NewModal);
-	    return (0, _possibleConstructorReturn3.default)(this, (NewModal.__proto__ || (0, _getPrototypeOf2.default)(NewModal)).apply(this, arguments));
+	    return (0, _possibleConstructorReturn3.default)(this, (NewModal.__proto__ || (0, _getPrototypeOf2.default)(NewModal)).call(this, props));
 	  }
 
 	  (0, _createClass3.default)(NewModal, [{
@@ -21799,7 +21797,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { id: this.props.id, className: 'modal' },
+	        { id: 'newmodal', className: 'modal' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'modal-content' },
