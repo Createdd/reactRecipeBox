@@ -21735,7 +21735,7 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(_NewModalC2.default, null)
+	        _react2.default.createElement(_NewModalC2.default, { id: 'newmodal' })
 	      );
 	    }
 	  }]);

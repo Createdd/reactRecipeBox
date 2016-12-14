@@ -2,6 +2,7 @@ import React from 'react';
 import Recipe from './RecipeC.js';
 import NewModal from './NewModalC.js';
 
+
 let exampleRecipe = {
   recipes: [
     {
@@ -50,7 +51,7 @@ export default class List extends React.Component {
             </i>
           </a>
         </div>
-        <NewModal />
+        <NewModal id="newmodal" />
       </div>
     );
   }
