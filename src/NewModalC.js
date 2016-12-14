@@ -17,7 +17,6 @@ export default class NewModal extends React.Component {
       ingredients: this.newIngredients
     }
     this.props.add(newRecipe);
-
   }
   render() {
     return (

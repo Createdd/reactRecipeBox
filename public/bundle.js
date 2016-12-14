@@ -21693,8 +21693,9 @@
 
 	    var _this = (0, _possibleConstructorReturn3.default)(this, (List.__proto__ || (0, _getPrototypeOf2.default)(List)).call(this, props));
 
+	    _this.addRecipe = _this.addRecipe.bind(_this);
 	    _this.state = {
-	      example: exampleRecipe
+	      list: exampleRecipe
 	    };
 	    return _this;
 	  }
@@ -21703,21 +21704,27 @@
 	    key: 'addRecipe',
 	    value: function addRecipe(recipe) {
 	      this.setState({
-	        recipes: this.state.example.recipes.concat([recipe])
+	        list: this.state.list.concat([recipe])
 	      });
-	      console.log(this.state.recipes);
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      {
+	        console.warn(this.state.list.recipes);
+	      }
+	      {
+	        console.log(this.state.list);
+	      }
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'container' },
+	        _react2.default.createElement(_NewModalC2.default, { id: 'newmodal', add: this.addRecipe.bind(this) }),
 	        _react2.default.createElement(
 	          'ul',
 	          { className: 'collapsible popout', 'data-collapsible': 'expandable' },
-	          this.state.example.recipes.map(function (recipe, ind) {
-	            return _react2.default.createElement(_RecipeC2.default, { key: ind, data: recipe });
+	          this.state.list.recipes.map(function (recipe, ind) {
+	            return _react2.default.createElement(_RecipeC2.default, { key: ind, index: ind, data: recipe });
 	          })
 	        ),
 	        _react2.default.createElement(
@@ -21735,8 +21742,7 @@
 	              'playlist_add'
 	            )
 	          )
-	        ),
-	        _react2.default.createElement(_NewModalC2.default, { id: 'newmodal', add: this.addRecipe.bind(this) })
+	        )
 	      );
 	    }
 	  }]);

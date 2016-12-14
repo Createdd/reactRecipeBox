@@ -23,24 +23,28 @@ let exampleRecipe = {
 export default class List extends React.Component {
   constructor(props) {
     super(props);
+    this.addRecipe = this.addRecipe.bind(this)
     this.state = {
-      example: exampleRecipe
+      list: exampleRecipe
     };
   }
 
   addRecipe(recipe) {
     this.setState({
-      recipes:this.state.example.recipes.concat([recipe])
-    })
-    console.log(this.state.recipes)
+      list: this.state.list.concat([recipe])
+    });
   }
 
+
   render () {
+    {console.warn(this.state.list.recipes)}
+    {console.log(this.state.list)}
     return (
       <div className = 'container'>
+        <NewModal id="newmodal" add={this.addRecipe.bind(this)}/>
         <ul className="collapsible popout" data-collapsible="expandable">
-          {this.state.example.recipes.map((recipe,ind) => {
-            return (<Recipe key={ind} data={recipe} />)
+          {this.state.list.recipes.map((recipe,ind) => {
+            return (<Recipe key={ind} index={ind} data={recipe} />)
             })
           }
         </ul>
@@ -52,7 +56,6 @@ export default class List extends React.Component {
             </i>
           </a>
         </div>
-        <NewModal id="newmodal" add={this.addRecipe.bind(this)}/>
       </div>
     );
   }
