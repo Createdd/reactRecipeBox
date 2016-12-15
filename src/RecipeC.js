@@ -1,9 +1,27 @@
 import React from 'react';
+import EditModal from './EditModalC.js';
 
 export default class Recipe extends React.Component {
   constructor(props) {
     super(props);
+    this.modalId = "modaledit" + this.stringHashCode(JSON.stringify(this.props.data));
   }
+
+  stringHashCode(str) {
+    let hash = 0,
+      i,
+      chr,
+      len;
+    if (str.length === 0)
+      return hash;
+    for (i = 0, len = str.length; i < len; i++) {
+      chr = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + chr;
+      hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+  }
+
   handleDelete() {
     this.props.delete(this.props.index);
   }
@@ -14,9 +32,7 @@ export default class Recipe extends React.Component {
           <i className="material-icons">library_books</i>
           {this.props.data.name}
         </div>
-
         <div className="collapsible-body">
-
           <ul className="collection">
               {this.props.data.ingredients.map((ingredient,ind) => {
                 return (
@@ -26,11 +42,12 @@ export default class Recipe extends React.Component {
                 )
               })}
           </ul>
-
           <div className="row">
             <div className="col s2 offset-s7">
-              <a className="btn waves-effect orange waves-green">Edit</a>
+              <a className="btn waves-effect orange waves-green"
+                onClick={() => {$("#" + this.modalId).openModal()}}>Edit</a>
             </div>
+            <EditModal id={this.modalId} data={this.props.data} />
             <div className="col s2">
               <a className="btn waves-effect red waves-green"
                 onClick={this.handleDelete.bind(this)}>Delete</a>

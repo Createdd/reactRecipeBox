@@ -3,9 +3,9 @@ import React from 'react';
 export default class EditModal extends React.Component {
   render() {
     return(
-      <div id="newmodal" className="modal">
+      <div id={this.props.id} className="modal">
         <div className="modal-content">
-            <h4 className="center">Add A New Recipe</h4>
+            <h4 className="center">{this.props.data.name}</h4>
           <div className="row">
             <form className="input-field col s12">
               <i className="material-icons prefix">mode_edit</i>

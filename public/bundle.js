@@ -21522,11 +21522,15 @@
 /* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _stringify = __webpack_require__(251);
+
+	var _stringify2 = _interopRequireDefault(_stringify);
 
 	var _getPrototypeOf = __webpack_require__(1);
 
@@ -21552,6 +21556,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _EditModalC = __webpack_require__(250);
+
+	var _EditModalC2 = _interopRequireDefault(_EditModalC);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Recipe = function (_React$Component) {
@@ -21559,69 +21567,94 @@
 
 	  function Recipe(props) {
 	    (0, _classCallCheck3.default)(this, Recipe);
-	    return (0, _possibleConstructorReturn3.default)(this, (Recipe.__proto__ || (0, _getPrototypeOf2.default)(Recipe)).call(this, props));
+
+	    var _this = (0, _possibleConstructorReturn3.default)(this, (Recipe.__proto__ || (0, _getPrototypeOf2.default)(Recipe)).call(this, props));
+
+	    _this.modalId = "modaledit" + _this.stringHashCode((0, _stringify2.default)(_this.props.data));
+	    return _this;
 	  }
 
 	  (0, _createClass3.default)(Recipe, [{
-	    key: "handleDelete",
+	    key: 'stringHashCode',
+	    value: function stringHashCode(str) {
+	      var hash = 0,
+	          i = void 0,
+	          chr = void 0,
+	          len = void 0;
+	      if (str.length === 0) return hash;
+	      for (i = 0, len = str.length; i < len; i++) {
+	        chr = str.charCodeAt(i);
+	        hash = (hash << 5) - hash + chr;
+	        hash |= 0; // Convert to 32bit integer
+	      }
+	      return hash;
+	    }
+	  }, {
+	    key: 'handleDelete',
 	    value: function handleDelete() {
 	      this.props.delete(this.props.index);
 	    }
 	  }, {
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
 	      return _react2.default.createElement(
-	        "li",
-	        { className: "brown lighten-3" },
+	        'li',
+	        { className: 'brown lighten-3' },
 	        _react2.default.createElement(
-	          "div",
-	          { className: "collapsible-header brown" },
+	          'div',
+	          { className: 'collapsible-header brown' },
 	          _react2.default.createElement(
-	            "i",
-	            { className: "material-icons" },
-	            "library_books"
+	            'i',
+	            { className: 'material-icons' },
+	            'library_books'
 	          ),
 	          this.props.data.name
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "collapsible-body" },
+	          'div',
+	          { className: 'collapsible-body' },
 	          _react2.default.createElement(
-	            "ul",
-	            { className: "collection" },
+	            'ul',
+	            { className: 'collection' },
 	            this.props.data.ingredients.map(function (ingredient, ind) {
 	              return _react2.default.createElement(
-	                "li",
-	                { className: "collection-item brown lighten-3", key: ind },
+	                'li',
+	                { className: 'collection-item brown lighten-3', key: ind },
 	                _react2.default.createElement(
-	                  "i",
-	                  { className: "material-icons" },
-	                  "done"
+	                  'i',
+	                  { className: 'material-icons' },
+	                  'done'
 	                ),
 	                ingredient
 	              );
 	            })
 	          ),
 	          _react2.default.createElement(
-	            "div",
-	            { className: "row" },
+	            'div',
+	            { className: 'row' },
 	            _react2.default.createElement(
-	              "div",
-	              { className: "col s2 offset-s7" },
+	              'div',
+	              { className: 'col s2 offset-s7' },
 	              _react2.default.createElement(
-	                "a",
-	                { className: "btn waves-effect orange waves-green" },
-	                "Edit"
+	                'a',
+	                { className: 'btn waves-effect orange waves-green',
+	                  onClick: function onClick() {
+	                    $("#" + _this2.modalId).openModal();
+	                  } },
+	                'Edit'
 	              )
 	            ),
+	            _react2.default.createElement(_EditModalC2.default, { id: this.modalId, data: this.props.data }),
 	            _react2.default.createElement(
-	              "div",
-	              { className: "col s2" },
+	              'div',
+	              { className: 'col s2' },
 	              _react2.default.createElement(
-	                "a",
-	                { className: "btn waves-effect red waves-green",
+	                'a',
+	                { className: 'btn waves-effect red waves-green',
 	                  onClick: this.handleDelete.bind(this) },
-	                "Delete"
+	                'Delete'
 	              )
 	            )
 	          )
@@ -21675,10 +21708,6 @@
 	var _NewModalC = __webpack_require__(249);
 
 	var _NewModalC2 = _interopRequireDefault(_NewModalC);
-
-	var _EditModalC = __webpack_require__(250);
-
-	var _EditModalC2 = _interopRequireDefault(_EditModalC);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21972,14 +22001,14 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        "div",
-	        { id: "newmodal", className: "modal" },
+	        { id: this.props.id, className: "modal" },
 	        _react2.default.createElement(
 	          "div",
 	          { className: "modal-content" },
 	          _react2.default.createElement(
 	            "h4",
 	            { className: "center" },
-	            "Add A New Recipe"
+	            this.props.data.name
 	          ),
 	          _react2.default.createElement(
 	            "div",
@@ -22038,6 +22067,22 @@
 	}(_react2.default.Component);
 
 	exports.default = EditModal;
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(252), __esModule: true };
+
+/***/ },
+/* 252 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var core  = __webpack_require__(14)
+	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
+	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+	  return $JSON.stringify.apply($JSON, arguments);
+	};
 
 /***/ }
 /******/ ]);

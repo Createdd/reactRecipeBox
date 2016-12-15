@@ -1,7 +1,7 @@
 import React from 'react';
 import Recipe from './RecipeC.js';
 import NewModal from './NewModalC.js';
-import EditModal from './EditModalC.js';
+
 
 
 let exampleRecipe = {
