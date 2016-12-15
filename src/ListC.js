@@ -40,8 +40,6 @@ export default class List extends React.Component {
 
 
   render () {
-    {console.warn(this.state.list.recipes)}
-    {console.log(this.state.list)}
     return (
       <div className = 'container'>
         <NewModal id="newmodal" add={this.addRecipe.bind(this)}/>

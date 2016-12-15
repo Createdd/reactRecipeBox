@@ -21712,12 +21712,6 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      {
-	        console.warn(this.state.list.recipes);
-	      }
-	      {
-	        console.log(this.state.list);
-	      }
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'container' },
@@ -21814,6 +21808,14 @@
 	      });
 	    }
 	  }, {
+	    key: 'handleClearInput',
+	    value: function handleClearInput() {
+	      this.newName = '';
+	      this.newIngredients = '';
+	      $('#recipeName').val('');
+	      $('#recipeIngredients').val('');
+	    }
+	  }, {
 	    key: 'handleSave',
 	    value: function handleSave() {
 	      if (this.handleName === undefined || this.handleIngredients === undefined) {
@@ -21824,6 +21826,7 @@
 	        ingredients: this.newIngredients
 	      };
 	      this.props.add(newRecipe);
+	      this.handleClearInput();
 	    }
 	  }, {
 	    key: 'render',

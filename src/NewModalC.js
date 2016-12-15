@@ -8,6 +8,12 @@ export default class NewModal extends React.Component {
   handleIngredients(e){
     this.newIngredients = e.target.value.split(",").map(str => str.trim());
   }
+  handleClearInput() {
+    this.newName = '';
+    this.newIngredients = '';
+    $('#recipeName').val('');
+    $('#recipeIngredients').val('');
+  }
   handleSave() {
     if(this.handleName === undefined || this.handleIngredients === undefined) {
       return;
@@ -17,6 +23,7 @@ export default class NewModal extends React.Component {
       ingredients: this.newIngredients
     }
     this.props.add(newRecipe);
+    this.handleClearInput();
   }
   render() {
     return (
