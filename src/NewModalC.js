@@ -47,7 +47,8 @@ export default class NewModal extends React.Component {
           </div>
         </div>
         <div className="modal-footer">
-          <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">
+          <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat"
+            onClick={this.handleClearInput.bind(this)}>
             Cancel</a>
           <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat"
             onClick={this.handleSave.bind(this)}>

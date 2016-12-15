@@ -21885,7 +21885,8 @@
 	          { className: 'modal-footer' },
 	          _react2.default.createElement(
 	            'a',
-	            { href: '#!', className: 'modal-action modal-close waves-effect waves-green btn-flat' },
+	            { href: '#!', className: 'modal-action modal-close waves-effect waves-green btn-flat',
+	              onClick: this.handleClearInput.bind(this) },
 	            'Cancel'
 	          ),
 	          _react2.default.createElement(
