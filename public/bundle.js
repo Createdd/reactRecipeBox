@@ -21563,6 +21563,11 @@
 	  }
 
 	  (0, _createClass3.default)(Recipe, [{
+	    key: "handleDelete",
+	    value: function handleDelete() {
+	      this.props.delete(this.props.index);
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -21614,7 +21619,8 @@
 	              { className: "col s2" },
 	              _react2.default.createElement(
 	                "a",
-	                { className: "btn waves-effect red waves-green" },
+	                { className: "btn waves-effect red waves-green",
+	                  onClick: this.handleDelete.bind(this) },
 	                "Delete"
 	              )
 	            )
@@ -21670,6 +21676,10 @@
 
 	var _NewModalC2 = _interopRequireDefault(_NewModalC);
 
+	var _EditModalC = __webpack_require__(250);
+
+	var _EditModalC2 = _interopRequireDefault(_EditModalC);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var exampleRecipe = {
@@ -21710,8 +21720,21 @@
 	      });
 	    }
 	  }, {
+	    key: 'deleteRecipe',
+	    value: function deleteRecipe(key) {
+	      this.setState({
+	        list: {
+	          recipes: this.state.list.recipes.filter(function (item, idx) {
+	            return idx !== key;
+	          })
+	        }
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'container' },
@@ -21720,7 +21743,7 @@
 	          'ul',
 	          { className: 'collapsible popout', 'data-collapsible': 'expandable' },
 	          this.state.list.recipes.map(function (recipe, ind) {
-	            return _react2.default.createElement(_RecipeC2.default, { key: ind, index: ind, data: recipe });
+	            return _react2.default.createElement(_RecipeC2.default, { key: ind, index: ind, data: recipe, 'delete': _this2.deleteRecipe.bind(_this2) });
 	          })
 	        ),
 	        _react2.default.createElement(
@@ -21780,10 +21803,6 @@
 	var _react = __webpack_require__(87);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _RecipeC = __webpack_require__(247);
-
-	var _RecipeC2 = _interopRequireDefault(_RecipeC);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21903,6 +21922,18 @@
 	}(_react2.default.Component);
 
 	exports.default = NewModal;
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(87);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }
 /******/ ]);

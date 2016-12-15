@@ -1,5 +1,5 @@
 import React from 'react';
-import Recipe from './RecipeC.js';
+
 
 export default class NewModal extends React.Component {
   handleName(e){

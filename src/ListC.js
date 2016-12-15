@@ -1,6 +1,7 @@
 import React from 'react';
 import Recipe from './RecipeC.js';
 import NewModal from './NewModalC.js';
+import EditModal from './EditModalC.js';
 
 
 let exampleRecipe = {
@@ -28,12 +29,20 @@ export default class List extends React.Component {
       list: exampleRecipe
     };
   }
-
   addRecipe(recipe) {
     this.setState({
       list: {
         recipes:
         this.state.list.recipes.concat([recipe])
+      }
+    });
+  }
+  deleteRecipe(key) {
+    this.setState({
+      list: {
+        recipes: this.state.list.recipes.filter((item, idx) => {
+          return idx !== key;
+        })
       }
     });
   }
@@ -45,7 +54,7 @@ export default class List extends React.Component {
         <NewModal id="newmodal" add={this.addRecipe.bind(this)}/>
         <ul className="collapsible popout" data-collapsible="expandable">
           {this.state.list.recipes.map((recipe,ind) => {
-            return (<Recipe key={ind} index={ind} data={recipe} />)
+            return (<Recipe key={ind} index={ind} data={recipe} delete={this.deleteRecipe.bind(this)}/>)
             })
           }
         </ul>

@@ -4,6 +4,9 @@ export default class Recipe extends React.Component {
   constructor(props) {
     super(props);
   }
+  handleDelete() {
+    this.props.delete(this.props.index);
+  }
   render () {
     return (
       <li className="brown lighten-3">
@@ -29,7 +32,8 @@ export default class Recipe extends React.Component {
               <a className="btn waves-effect orange waves-green">Edit</a>
             </div>
             <div className="col s2">
-              <a className="btn waves-effect red waves-green">Delete</a>
+              <a className="btn waves-effect red waves-green"
+                onClick={this.handleDelete.bind(this)}>Delete</a>
             </div>
           </div>
 
