@@ -21704,7 +21704,9 @@
 	    key: 'addRecipe',
 	    value: function addRecipe(recipe) {
 	      this.setState({
-	        list: this.state.list.concat([recipe])
+	        list: {
+	          recipes: this.state.list.recipes.concat([recipe])
+	        }
 	      });
 	    }
 	  }, {

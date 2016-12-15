@@ -31,7 +31,10 @@ export default class List extends React.Component {
 
   addRecipe(recipe) {
     this.setState({
-      list: this.state.list.concat([recipe])
+      list: {
+        recipes:
+        this.state.list.recipes.concat([recipe])
+      }
     });
   }
 
