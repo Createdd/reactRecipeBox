@@ -21927,13 +21927,117 @@
 /* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(1);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(27);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(28);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(32);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(79);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
 
 	var _react = __webpack_require__(87);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var EditModal = function (_React$Component) {
+	  (0, _inherits3.default)(EditModal, _React$Component);
+
+	  function EditModal() {
+	    (0, _classCallCheck3.default)(this, EditModal);
+	    return (0, _possibleConstructorReturn3.default)(this, (EditModal.__proto__ || (0, _getPrototypeOf2.default)(EditModal)).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(EditModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { id: "newmodal", className: "modal" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "modal-content" },
+	          _react2.default.createElement(
+	            "h4",
+	            { className: "center" },
+	            "Add A New Recipe"
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row" },
+	            _react2.default.createElement(
+	              "form",
+	              { className: "input-field col s12" },
+	              _react2.default.createElement(
+	                "i",
+	                { className: "material-icons prefix" },
+	                "mode_edit"
+	              ),
+	              _react2.default.createElement("input", { id: "recipeName", type: "text", className: "validate" }),
+	              _react2.default.createElement(
+	                "label",
+	                { htmlFor: "recipeName" },
+	                "Name of the recipe"
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "form",
+	              { className: "input-field col s12" },
+	              _react2.default.createElement(
+	                "i",
+	                { className: "material-icons prefix" },
+	                "mode_edit"
+	              ),
+	              _react2.default.createElement("textarea", { id: "recipeIngredients",
+	                className: "materialize-textarea validate" }),
+	              _react2.default.createElement(
+	                "label",
+	                { htmlFor: "recipeIngredients" },
+	                "Ingredients (Seperate with commas)"
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "modal-footer" },
+	          _react2.default.createElement(
+	            "a",
+	            { href: "#!", className: "modal-action modal-close waves-effect waves-green btn-flat" },
+	            "Cancel"
+	          ),
+	          _react2.default.createElement(
+	            "a",
+	            { href: "#!", className: "modal-action modal-close waves-effect waves-green btn-flat" },
+	            "Save"
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	  return EditModal;
+	}(_react2.default.Component);
+
+	exports.default = EditModal;
 
 /***/ }
 /******/ ]);
