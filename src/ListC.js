@@ -2,8 +2,6 @@ import React from 'react';
 import Recipe from './RecipeC.js';
 import NewModal from './NewModalC.js';
 
-
-
 let exampleRecipe = {
   recipes: [
     {

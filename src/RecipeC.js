@@ -6,7 +6,6 @@ export default class Recipe extends React.Component {
     super(props);
     this.modalId = "modaledit" + this.stringHashCode(JSON.stringify(this.props.data));
   }
-
   stringHashCode(str) {
     let hash = 0,
       i,
@@ -19,10 +18,8 @@ export default class Recipe extends React.Component {
       hash = ((hash << 5) - hash) + chr;
       hash |= 0;
     }
-    console.log(hash);
     return hash;
   }
-
   handleDelete() {
     this.props.delete(this.props.index);
   }
@@ -54,7 +51,6 @@ export default class Recipe extends React.Component {
                 onClick={this.handleDelete.bind(this)}>Delete</a>
             </div>
           </div>
-
         </div>
       </li>
     );

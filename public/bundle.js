@@ -21587,7 +21587,6 @@
 	        hash = (hash << 5) - hash + chr;
 	        hash |= 0;
 	      }
-	      console.log(hash);
 	      return hash;
 	    }
 	  }, {
@@ -21740,7 +21739,7 @@
 	          _react2.default.createElement(
 	            "h4",
 	            { className: "center" },
-	            this.props.data.name
+	            "Edit Recipe"
 	          ),
 	          _react2.default.createElement(
 	            "div",
@@ -21757,7 +21756,8 @@
 	              _react2.default.createElement(
 	                "label",
 	                { htmlFor: "recipeName" },
-	                "Name of the recipe"
+	                "Name: ",
+	                this.props.data.name
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -21773,7 +21773,8 @@
 	              _react2.default.createElement(
 	                "label",
 	                { htmlFor: "recipeIngredients" },
-	                "Ingredients (Seperate with commas)"
+	                "Ingredients: ",
+	                this.props.data.ingredients
 	              )
 	            )
 	          )
