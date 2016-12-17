@@ -21893,6 +21893,7 @@
 	    _this.localStoreKey = "state_recipeBox";
 	    var loadedState = _this.loadLocalStore();
 	    _this.state = loadedState === null ? { list: exampleRecipe } : { list: loadedState };
+	    console.warn(_this.state);
 	    return _this;
 	  }
 
@@ -21904,9 +21905,9 @@
 	      }
 	      var stateJSON = localStorage.getItem(this.localStoreKey);
 	      if (stateJSON === null) {
+	        console.log("no items!");
 	        return null;
 	      }
-	      console.warn(stateJSON);
 	      return JSON.parse(stateJSON);
 	    }
 	  }, {
@@ -21915,7 +21916,7 @@
 	      if (typeof Storage === "undefined") {
 	        return;
 	      }
-	      localStorage.setItem(this.localStoreKey, (0, _stringify2.default)(this.state));
+	      localStorage.setItem(this.localStoreKey, (0, _stringify2.default)(this.state.list));
 	    }
 	  }, {
 	    key: 'addRecipe',

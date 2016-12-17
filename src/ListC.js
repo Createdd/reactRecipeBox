@@ -27,6 +27,7 @@ export default class List extends React.Component {
     this.state = loadedState === null
       ? {list: exampleRecipe}
       : {list: loadedState};
+    console.warn(this.state);
   }
   loadLocalStore() {
     if(typeof(Storage) === "undefined") {
@@ -34,16 +35,16 @@ export default class List extends React.Component {
     }
     let stateJSON = localStorage.getItem(this.localStoreKey);
     if(stateJSON === null) {
+      console.log("no items!")
       return null;
     }
-    console.warn(stateJSON);
     return JSON.parse(stateJSON);
   }
   saveLocalStore() {
     if(typeof(Storage) === "undefined") {
       return;
     }
-    localStorage.setItem(this.localStoreKey, JSON.stringify(this.state));
+    localStorage.setItem(this.localStoreKey, JSON.stringify(this.state.list));
   }
   addRecipe(recipe) {
     this.setState({
