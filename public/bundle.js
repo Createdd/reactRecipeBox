@@ -21893,7 +21893,6 @@
 	    _this.localStoreKey = "state_recipeBox";
 	    var loadedState = _this.loadLocalStore();
 	    _this.state = loadedState === null ? { list: exampleRecipe } : { list: loadedState };
-	    console.warn(_this.state);
 	    return _this;
 	  }
 

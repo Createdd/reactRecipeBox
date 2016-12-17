@@ -27,7 +27,6 @@ export default class List extends React.Component {
     this.state = loadedState === null
       ? {list: exampleRecipe}
       : {list: loadedState};
-    console.warn(this.state);
   }
   loadLocalStore() {
     if(typeof(Storage) === "undefined") {
