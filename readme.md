@@ -8,7 +8,7 @@ Created by Daniel Deutsch (<kbd>
 # FreeCodeCamp React Projects: Build A Recipe Box
 
 ## Watch it on <a href="https://ddcs-recipebox.herokuapp.com/" target="_blank">Heroku</a>:
-https://ddcs-recipebox.herokuapp.com/
+<a href="https://ddcs-recipebox.herokuapp.com/" target="_blank">https://ddcs-recipebox.herokuapp.com/</a>
 
 
 ## User stories:
@@ -18,3 +18,5 @@ https://ddcs-recipebox.herokuapp.com/
 - I can edit these recipes.
 - I can delete these recipes.
 - All new recipes I add are saved in my browser's local storage. If I refresh the page, these recipes will still be there.
+
+###### Thx to <a href="http://codepen.io/pnahratow/" target="_blank">Philipp Nahratow</a> for providing Inspiration and a Solution for indexing the Recipes!
