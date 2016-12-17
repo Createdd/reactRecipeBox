@@ -14,7 +14,7 @@ let exampleRecipe = {
     },
     {
       name: 'Happiness',
-      ingredients: ['Moms Spaghetti', 'Whole crowd', 'goes so loud', '8mile']
+      ingredients: ['Work', 'Study', 'Commit', 'Laugh']
     }
   ]
 }
@@ -22,7 +22,7 @@ let exampleRecipe = {
 export default class List extends React.Component {
   constructor(props) {
     super(props);
-    this.localStoreKey = "state_recipeBox";
+    this.localStoreKey = "store_for_react_recipeBox";
     let loadedState = this.loadLocalStore();
     this.state = loadedState === null
       ? {list: exampleRecipe}

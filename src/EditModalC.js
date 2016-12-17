@@ -23,9 +23,9 @@ export default class EditModal extends React.Component {
               <i className="material-icons prefix">mode_edit</i>
               <textarea id="recipeIngredients"
                 className="materialize-textarea validate"
-                onChange={this.handleIngredients.bind(this)}></textarea>
+                onChange={this.handleIngredients.bind(this)}>{this.props.data.ingredients.join(", ")}</textarea>
               <label htmlFor="recipeIngredients">
-                Ingredients: {this.props.data.ingredients.join(", ")}
+                Ingredients:
               </label>
             </form>
           </div>

@@ -21786,14 +21786,17 @@
 	                { className: "material-icons prefix" },
 	                "mode_edit"
 	              ),
-	              _react2.default.createElement("textarea", { id: "recipeIngredients",
-	                className: "materialize-textarea validate",
-	                onChange: this.handleIngredients.bind(this) }),
+	              _react2.default.createElement(
+	                "textarea",
+	                { id: "recipeIngredients",
+	                  className: "materialize-textarea validate",
+	                  onChange: this.handleIngredients.bind(this) },
+	                this.props.data.ingredients.join(", ")
+	              ),
 	              _react2.default.createElement(
 	                "label",
 	                { htmlFor: "recipeIngredients" },
-	                "Ingredients: ",
-	                this.props.data.ingredients.join(", ")
+	                "Ingredients:"
 	              )
 	            )
 	          )
@@ -21878,7 +21881,7 @@
 	    ingredients: ['Health', 'Wealth', 'Love', 'Happiness']
 	  }, {
 	    name: 'Happiness',
-	    ingredients: ['Moms Spaghetti', 'Whole crowd', 'goes so loud', '8mile']
+	    ingredients: ['Work', 'Study', 'Commit', 'Laugh']
 	  }]
 	};
 
@@ -21890,7 +21893,7 @@
 
 	    var _this = (0, _possibleConstructorReturn3.default)(this, (List.__proto__ || (0, _getPrototypeOf2.default)(List)).call(this, props));
 
-	    _this.localStoreKey = "state_recipeBox";
+	    _this.localStoreKey = "store_for_react_recipeBox";
 	    var loadedState = _this.loadLocalStore();
 	    _this.state = loadedState === null ? { list: exampleRecipe } : { list: loadedState };
 	    return _this;

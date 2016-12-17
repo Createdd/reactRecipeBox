@@ -7,8 +7,8 @@ Created by Daniel Deutsch (<kbd>
 
 # FreeCodeCamp React Projects: Build A Recipe Box
 
-## Watch it on Heroku:
-<a href="https://ddcs-recipebox.herokuapp.com/" target="_blank">https://ddcs-recipebox.herokuapp.com/</a>
+## Watch it on <a href="https://ddcs-recipebox.herokuapp.com/" target="_blank">Heroku</a>:
+https://ddcs-recipebox.herokuapp.com/
 
 
 ## User stories:
