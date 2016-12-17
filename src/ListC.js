@@ -44,7 +44,19 @@ export default class List extends React.Component {
       }
     });
   }
-
+  changeRecipe(index, recipe) {
+    this.setState({
+      list: {
+        recipes: this.state.list.recipes.map((item, idx) => {
+          if(idx === index){
+            return recipe;
+          } else {
+            return item;
+          }
+        })
+      }
+    })
+  }
 
   render () {
     return (
@@ -52,7 +64,13 @@ export default class List extends React.Component {
         <NewModal id="newmodal" add={this.addRecipe.bind(this)}/>
         <ul className="collapsible popout" data-collapsible="expandable">
           {this.state.list.recipes.map((recipe,ind) => {
-            return (<Recipe key={ind} index={ind} data={recipe} delete={this.deleteRecipe.bind(this)}/>)
+            return (
+              <Recipe key={ind}
+                index={ind}
+                data={recipe}
+                delete={this.deleteRecipe.bind(this)}
+                change={this.changeRecipe.bind(this)}
+              />)
             })
           }
         </ul>

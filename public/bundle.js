@@ -21595,6 +21595,14 @@
 	      this.props.delete(this.props.index);
 	    }
 	  }, {
+	    key: 'editIngredients',
+	    value: function editIngredients(newIngredients) {
+	      this.props.change(this.props.index, {
+	        name: this.props.data.name,
+	        ingredients: newIngredients
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
@@ -21646,7 +21654,8 @@
 	                'Edit'
 	              )
 	            ),
-	            _react2.default.createElement(_EditModalC2.default, { id: this.modalId, data: this.props.data }),
+	            _react2.default.createElement(_EditModalC2.default, { id: this.modalId, data: this.props.data,
+	              editIngredients: this.editIngredients.bind(this) }),
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'col s2' },
@@ -21728,6 +21737,21 @@
 	  }
 
 	  (0, _createClass3.default)(EditModal, [{
+	    key: "handleIngredients",
+	    value: function handleIngredients(e) {
+	      this.newIngredients = e.target.value.split(",").map(function (str) {
+	        return str.trim();
+	      });
+	    }
+	  }, {
+	    key: "handleSave",
+	    value: function handleSave() {
+	      if (this.newIngredients === undefined) {
+	        return;
+	      }
+	      this.props.editIngredients(this.newIngredients);
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -21769,12 +21793,13 @@
 	                "mode_edit"
 	              ),
 	              _react2.default.createElement("textarea", { id: "recipeIngredients",
-	                className: "materialize-textarea validate" }),
+	                className: "materialize-textarea validate",
+	                onChange: this.handleIngredients.bind(this) }),
 	              _react2.default.createElement(
 	                "label",
 	                { htmlFor: "recipeIngredients" },
 	                "Ingredients: ",
-	                this.props.data.ingredients
+	                this.props.data.ingredients.join(", ")
 	              )
 	            )
 	          )
@@ -21789,7 +21814,8 @@
 	          ),
 	          _react2.default.createElement(
 	            "a",
-	            { href: "#!", className: "modal-action modal-close waves-effect waves-green btn-flat" },
+	            { href: "#!", className: "modal-action modal-close waves-effect waves-green btn-flat",
+	              onClick: this.handleSave.bind(this) },
 	            "Save"
 	          )
 	        )
@@ -21894,6 +21920,21 @@
 	      });
 	    }
 	  }, {
+	    key: 'changeRecipe',
+	    value: function changeRecipe(index, recipe) {
+	      this.setState({
+	        list: {
+	          recipes: this.state.list.recipes.map(function (item, idx) {
+	            if (idx === index) {
+	              return recipe;
+	            } else {
+	              return item;
+	            }
+	          })
+	        }
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
@@ -21906,7 +21947,12 @@
 	          'ul',
 	          { className: 'collapsible popout', 'data-collapsible': 'expandable' },
 	          this.state.list.recipes.map(function (recipe, ind) {
-	            return _react2.default.createElement(_RecipeC2.default, { key: ind, index: ind, data: recipe, 'delete': _this2.deleteRecipe.bind(_this2) });
+	            return _react2.default.createElement(_RecipeC2.default, { key: ind,
+	              index: ind,
+	              data: recipe,
+	              'delete': _this2.deleteRecipe.bind(_this2),
+	              change: _this2.changeRecipe.bind(_this2)
+	            });
 	          })
 	        ),
 	        _react2.default.createElement(
