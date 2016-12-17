@@ -22,10 +22,28 @@ let exampleRecipe = {
 export default class List extends React.Component {
   constructor(props) {
     super(props);
-    this.addRecipe = this.addRecipe.bind(this)
-    this.state = {
-      list: exampleRecipe
-    };
+    this.localStoreKey = "state_recipeBox";
+    let loadedState = this.loadLocalStore();
+    this.state = loadedState === null
+      ? {list: exampleRecipe}
+      : {list: loadedState};
+  }
+  loadLocalStore() {
+    if(typeof(Storage) === "undefined") {
+      return null;
+    }
+    let stateJSON = localStorage.getItem(this.localStoreKey);
+    if(stateJSON === null) {
+      return null;
+    }
+    console.warn(stateJSON);
+    return JSON.parse(stateJSON);
+  }
+  saveLocalStore() {
+    if(typeof(Storage) === "undefined") {
+      return;
+    }
+    localStorage.setItem(this.localStoreKey, JSON.stringify(this.state));
   }
   addRecipe(recipe) {
     this.setState({
@@ -33,7 +51,7 @@ export default class List extends React.Component {
         recipes:
         this.state.list.recipes.concat([recipe])
       }
-    });
+    }, this.saveLocalStore.bind(this));
   }
   deleteRecipe(key) {
     this.setState({
@@ -42,7 +60,7 @@ export default class List extends React.Component {
           return idx !== key;
         })
       }
-    });
+    }, this.saveLocalStore.bind(this));
   }
   changeRecipe(index, recipe) {
     this.setState({
@@ -55,7 +73,7 @@ export default class List extends React.Component {
           }
         })
       }
-    })
+    }, this.saveLocalStore.bind(this));
   }
 
   render () {

@@ -21831,6 +21831,10 @@
 	  value: true
 	});
 
+	var _stringify = __webpack_require__(248);
+
+	var _stringify2 = _interopRequireDefault(_stringify);
+
 	var _getPrototypeOf = __webpack_require__(1);
 
 	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -21886,21 +21890,41 @@
 
 	    var _this = (0, _possibleConstructorReturn3.default)(this, (List.__proto__ || (0, _getPrototypeOf2.default)(List)).call(this, props));
 
-	    _this.addRecipe = _this.addRecipe.bind(_this);
-	    _this.state = {
-	      list: exampleRecipe
-	    };
+	    _this.localStoreKey = "state_recipeBox";
+	    var loadedState = _this.loadLocalStore();
+	    _this.state = loadedState === null ? { list: exampleRecipe } : { list: loadedState };
 	    return _this;
 	  }
 
 	  (0, _createClass3.default)(List, [{
+	    key: 'loadLocalStore',
+	    value: function loadLocalStore() {
+	      if (typeof Storage === "undefined") {
+	        return null;
+	      }
+	      var stateJSON = localStorage.getItem(this.localStoreKey);
+	      if (stateJSON === null) {
+	        return null;
+	      }
+	      console.warn(stateJSON);
+	      return JSON.parse(stateJSON);
+	    }
+	  }, {
+	    key: 'saveLocalStore',
+	    value: function saveLocalStore() {
+	      if (typeof Storage === "undefined") {
+	        return;
+	      }
+	      localStorage.setItem(this.localStoreKey, (0, _stringify2.default)(this.state));
+	    }
+	  }, {
 	    key: 'addRecipe',
 	    value: function addRecipe(recipe) {
 	      this.setState({
 	        list: {
 	          recipes: this.state.list.recipes.concat([recipe])
 	        }
-	      });
+	      }, this.saveLocalStore.bind(this));
 	    }
 	  }, {
 	    key: 'deleteRecipe',
@@ -21911,7 +21935,7 @@
 	            return idx !== key;
 	          })
 	        }
-	      });
+	      }, this.saveLocalStore.bind(this));
 	    }
 	  }, {
 	    key: 'changeRecipe',
@@ -21926,7 +21950,7 @@
 	            }
 	          })
 	        }
-	      });
+	      }, this.saveLocalStore.bind(this));
 	    }
 	  }, {
 	    key: 'render',
