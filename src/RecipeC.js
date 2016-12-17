@@ -25,7 +25,7 @@ export default class Recipe extends React.Component {
   }
   editIngredients(newIngredients){
     this.props.change(this.props.index, {
-      name: this.props.data.name, 
+      name: this.props.data.name,
       ingredients: newIngredients
     })
   }

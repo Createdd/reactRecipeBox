@@ -14,12 +14,10 @@ export default class EditModal extends React.Component {
     return(
       <div id={this.props.id} className="modal">
         <div className="modal-content">
-            <h4 className="center">Edit Recipe</h4>
+            <h4 className="center">Edit Ingredients</h4>
           <div className="row">
             <form className="input-field col s12">
-              <i className="material-icons prefix">mode_edit</i>
-              <input id="recipeName" type="text" className="validate"/>
-              <label htmlFor="recipeName">Name: {this.props.data.name}</label>
+              <p>Recipe: {this.props.data.name}</p>
             </form>
             <form className="input-field col s12">
               <i className="material-icons prefix">mode_edit</i>

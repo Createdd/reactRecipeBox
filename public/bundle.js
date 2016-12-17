@@ -21763,7 +21763,7 @@
 	          _react2.default.createElement(
 	            "h4",
 	            { className: "center" },
-	            "Edit Recipe"
+	            "Edit Ingredients"
 	          ),
 	          _react2.default.createElement(
 	            "div",
@@ -21772,15 +21772,9 @@
 	              "form",
 	              { className: "input-field col s12" },
 	              _react2.default.createElement(
-	                "i",
-	                { className: "material-icons prefix" },
-	                "mode_edit"
-	              ),
-	              _react2.default.createElement("input", { id: "recipeName", type: "text", className: "validate" }),
-	              _react2.default.createElement(
-	                "label",
-	                { htmlFor: "recipeName" },
-	                "Name: ",
+	                "p",
+	                null,
+	                "Recipe: ",
 	                this.props.data.name
 	              )
 	            ),
